@@ -1,5 +1,5 @@
 /** @type {import('ts-jest').JestConfigWithTsJest} */
-export default {
+const jestConfig = {
   preset: 'ts-jest',
   testEnvironment: 'jest-environment-jsdom',
   moduleNameMapper: {
@@ -7,3 +7,5 @@ export default {
   },
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
 };
+
+export default jestConfig;

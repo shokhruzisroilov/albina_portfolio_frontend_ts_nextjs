@@ -1,5 +1,12 @@
 # Albina's portfolio website
 
+## Texnologiyalar
+
+Next.js
+TypeScript
+Tailwind CSS
+
+## O‘rnatish (Installation)
 
 ### repository ni clone qilish
 ```

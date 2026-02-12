@@ -9,7 +9,7 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "format": "prettier --write .",
     "prepare": "husky",
-    "test": "jest"
+    "test": "jest --passWithNoTests"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [

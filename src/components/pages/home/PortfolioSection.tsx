@@ -2,10 +2,10 @@
 import { GraduationHat, InfoCircleIcon, ShareIcon } from '@/assets/icons';
 import { portfolioData } from '@/constants';
 import { PortfolioItem } from '@/types';
-import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useRef, useState } from 'react';
 import { MdOutlineNavigateBefore, MdOutlineNavigateNext } from 'react-icons/md';
+import type { Swiper as SwiperClass } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
@@ -50,23 +50,15 @@ const PortfolioCard: React.FC<{ data: PortfolioItem }> = ({ data }) => (
         ))}
       </ul>
       <div className="flex items-center gap-4 mt-4 font-semibold text-[14px] leading-[100%] text-[#9BD95C]">
-        <motion.div
-          whileHover={{ scale: 1.05, x: 5 }}
-          transition={{ type: 'spring', stiffness: 300 }}
-          className="flex items-center gap-3 cursor-pointer"
-        >
+        <div className="flex items-center gap-3 cursor-pointer">
           <p>View Project</p>
           <ShareIcon />
-        </motion.div>
+        </div>
         <div className="w-0.5 h-4 bg-[#EFEFF9]"></div>
-        <motion.div
-          whileHover={{ scale: 1.05, x: 5 }}
-          transition={{ type: 'spring', stiffness: 300 }}
-          className="flex items-center gap-3 cursor-pointer"
-        >
+        <div className="flex items-center gap-3 cursor-pointer">
           <p>Learn more</p>
           <InfoCircleIcon />
-        </motion.div>
+        </div>
       </div>
     </div>
   </div>
@@ -74,11 +66,11 @@ const PortfolioCard: React.FC<{ data: PortfolioItem }> = ({ data }) => (
 
 // Portfolio Section
 const PortfolioSection: React.FC = () => {
-  const swiperRef = useRef<any>(null);
+  const swiperRef = useRef<SwiperClass | null>(null);
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
 
-  const handleSlideChange = (swiper: any) => {
+  const handleSlideChange = (swiper: SwiperClass) => {
     setIsBeginning(swiper.isBeginning);
     setIsEnd(swiper.isEnd);
   };

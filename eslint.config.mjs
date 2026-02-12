@@ -16,7 +16,6 @@ const eslintConfig = defineConfig([
   {
     rules: {
       semi: ['error', 'always'],
-      quotes: ['error', 'single'],
       'react/no-unescaped-entities': 'off',
     },
   },

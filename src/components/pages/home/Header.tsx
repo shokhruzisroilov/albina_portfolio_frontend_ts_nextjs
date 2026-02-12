@@ -5,8 +5,8 @@ import Image from 'next/image';
 
 const Header = () => {
   return (
-    <div id="home" className="w-full pt-36 px-6">
-      <div className="w-full max-w-300 mx-auto pt-10">
+    <div id="home" className="w-full px-6 pt-36">
+      <div className="w-full max-w-300 mx-auto py-10">
         <div className="flex xl:flex-row flex-col xl:items-center justify-between gap-10">
           {/* TEXT INFORMATION */}
           <div className="space-y-6">
@@ -51,7 +51,6 @@ const Header = () => {
               width={500}
               height={500}
               alt="Hero"
-              quality={90}
               priority
               sizes="(max-width: 768px) 100vw, 500px"
             />
@@ -95,7 +94,7 @@ const Header = () => {
         </div>
 
         {/* IMAGE SECTION */}
-        <div className="py-16 sm:py-24 md:py-32 flex items-center justify-center">
+        <div className="flex items-center justify-center pt-32">
           <div
             className="w-full relative h-96 sm:h-112 md:h-128 lg:h-150 rounded-2xl sm:rounded-3xl lg:rounded-4xl"
             style={{
@@ -104,7 +103,7 @@ const Header = () => {
             }}
           >
             <div
-              className="absolute w-full h-96 sm:h-112 md:h-128 lg:h-150 left-0 sm:left-2 md:left-4 lg:left-13 bottom-0 sm:bottom-2 md:bottom-4 lg:bottom-13 rounded-2xl sm:rounded-3xl lg:rounded-4xl p-2 sm:p-2.5 md:p-3"
+              className="absolute w-full h-96 sm:h-112 md:h-128 lg:h-150 left-0 sm:left-2 md:left-4 lg:left-12 bottom-0 sm:bottom-2 md:bottom-4 lg:bottom-12 rounded-2xl sm:rounded-3xl lg:rounded-4xl p-2 sm:p-2.5 md:p-3"
               style={{
                 background:
                   'linear-gradient(356.45deg, #F99D1C 31.2%, #FAA61A 40.26%, #FDBA13 61.45%, #FFC50B 80.44%, #FFC907 95.27%)',

@@ -1,6 +1,7 @@
 import { PodcastIcon } from '@/assets/icons';
 import DocumentDownloadIcon from '@/assets/icons/DocumentDownloadIcon';
-import { socialLinks } from '@/constants/headerItems';
+import { socialLinks } from '@/constants';
+
 import Image from 'next/image';
 
 const Header = () => {
@@ -99,7 +100,7 @@ const Header = () => {
 
       {/* IMAGE SECTION WITH GRADIENT */}
       <div className="flex justify-center pt-32">
-        <div className="relative w-full h-96 sm:h-112 md:h-128 lg:h-150 rounded-2xl sm:rounded-3xl lg:rounded-4xl bg-linear-to-tr from-[#F99D1C1A] via-[#FAA61A1A] to-[#FFC9071A]">
+        <div className="relative w-full max-w-300 h-96 sm:h-112 md:h-128 lg:h-150 rounded-2xl sm:rounded-3xl lg:rounded-4xl bg-linear-to-tr from-[#F99D1C1A] via-[#FAA61A1A] to-[#FFC9071A]">
           <div className="absolute w-full h-full left-0 bottom-0 rounded-2xl sm:rounded-3xl lg:rounded-4xl p-2 sm:p-2.5 md:p-3 bg-linear-to-tr from-[#F99D1C] via-[#FAA61A] to-[#FFC907]">
             <Image
               src="/images/video.png"

@@ -3,7 +3,7 @@ import {
   GuidingValueIcon2,
   GuidingValueIcon3,
 } from '@/assets/icons';
-import { GuidingValue, StepChart } from '@/types/about';
+import { GuidingValue, StepChart } from '@/types';
 
 export const guidingValues: GuidingValue[] = [
   {

@@ -1,7 +1,7 @@
 'use client';
 
-import { guidingValues, stepCharts } from '@/constants/aboutItems';
-import { GuidingValue, StepChart } from '@/types/about';
+import { guidingValues, stepCharts } from '@/constants';
+import { GuidingValue, StepChart } from '@/types';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
@@ -102,7 +102,7 @@ const AboutSection: React.FC = () => {
             />
           </motion.div>
 
-          <div className="space-y-8 w-full">
+          <div className="space-y-8 w-full lg:w-1/2">
             {stepCharts &&
               stepCharts.map((chart, idx) => (
                 <StepChartItem key={idx} {...chart} />

@@ -1,3 +1,4 @@
+import ScrollLinked from '@/components/common/ScrollLinked';
 import Footer from '@/components/layouts/Footer';
 import Navbar from '@/components/layouts/Navbar';
 import {
@@ -10,14 +11,16 @@ import {
 const HomePage = () => {
   return (
     <>
-      <Navbar />
-      <main>
-        <Header />
-        <AboutSection />
-        <CVSection />
-        <PortfolioSection />
-      </main>
-      <Footer />
+      <ScrollLinked>
+        <Navbar />
+        <main>
+          <Header />
+          <AboutSection />
+          <CVSection />
+          <PortfolioSection />
+        </main>
+        <Footer />
+      </ScrollLinked>
     </>
   );
 };

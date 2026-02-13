@@ -6,7 +6,17 @@ import { motion } from 'motion/react';
 import Image from 'next/image';
 
 const StepChartItem: React.FC<StepChart> = ({ imageSrc, step, title }) => (
-  <div className="flex items-center gap-6">
+  <motion.div
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, amount: 0.3 }}
+    transition={{
+      type: 'spring',
+      stiffness: 80,
+      damping: 15,
+    }}
+    className="flex items-center gap-6"
+  >
     <Image
       src={imageSrc}
       width={100}
@@ -22,7 +32,7 @@ const StepChartItem: React.FC<StepChart> = ({ imageSrc, step, title }) => (
         {title}
       </h4>
     </div>
-  </div>
+  </motion.div>
 );
 
 const GuidingValueCard: React.FC<GuidingValue> = ({
@@ -30,8 +40,24 @@ const GuidingValueCard: React.FC<GuidingValue> = ({
   title,
   description,
 }) => (
-  <div className="border border-[#EFEFF9] rounded-2xl p-8">
-    <div className="w-14 h-14 rounded-xl bg-[#EFEFF9] flex items-center justify-center">
+  <motion.div
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, amount: 0.2 }}
+    transition={{
+      type: 'spring',
+      stiffness: 70,
+      damping: 12,
+      delay: 0.1,
+    }}
+    whileHover={{
+      y: -5,
+      boxShadow: '0 10px 30px -10px rgba(155, 217, 92, 0.2)',
+      transition: { duration: 0.2 },
+    }}
+    className="border-2 border-[#9BD95C] rounded-2xl p-8 transition-all duration-300"
+  >
+    <div className="w-14 h-14 rounded-xl bg-[#EFEFF9] flex items-center justify-center border-2 border-[#9BD95C]">
       {icon}
     </div>
     <h3 className="mt-6 font-semibold text-[20px] leading-[140%] tracking-[-2%] text-[#0C0C0C]">
@@ -40,7 +66,7 @@ const GuidingValueCard: React.FC<GuidingValue> = ({
     <p className="mt-3 font-medium text-[16px] leading-[140%] tracking-[-2%] text-[#5C687D]">
       {description}
     </p>
-  </div>
+  </motion.div>
 );
 
 const AboutSection: React.FC = () => {
@@ -48,11 +74,34 @@ const AboutSection: React.FC = () => {
     <div id="about" className="w-full px-6 scroll-mt-20">
       <div className="max-w-300 mx-auto">
         {/* ABOUT ME */}
-        <div className="pt-20">
-          <h3 className="font-medium text-[32px] leading-[120%] text-[#0C0C0C]">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{
+            type: 'spring',
+            stiffness: 70,
+            damping: 12,
+            duration: 0.6,
+          }}
+          className="pt-30"
+        >
+          <motion.h3
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ delay: 0.1, type: 'spring', stiffness: 80 }}
+            className="font-medium text-[32px] leading-[120%] text-[#0C0C0C]"
+          >
             About me
-          </h3>
-          <p className="mt-3 font-medium text-[16px] leading-[140%] tracking-[-0.32px] text-[#5C687D]">
+          </motion.h3>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+            className="mt-16 font-medium text-[20px] leading-[140%] tracking-[-0.32px] text-[#5C687D]"
+          >
             I am an instructional designer, educator, and education spacial
             designer. I am passionate about transforming learning through
             innovation and evidence-based design. My specialization is
@@ -62,11 +111,13 @@ const AboutSection: React.FC = () => {
             system to designing digital courses for Georgetown University&apos;s
             School of Nursing and School of Continuing Studies.
             <br />
+            <br />
             My approach integrates Universal Design principles, and learning
             science to build experiences that are both cutting-edge and
             inclusive. I work extensively with Canvas LMS, Articulate 360, H5P,
             and other EdTech platforms to develop interactive content, aligned
             assessments, and multimedia resources that engage diverse learners.
+            <br />
             <br />
             What sets me apart is my ability to scale instructional innovation
             internationally. I have designed blended learning programs, digital
@@ -83,45 +134,76 @@ const AboutSection: React.FC = () => {
             assessments, or implementing new learning technologies, my focus
             remains constant: creating learner-centered experiences that are
             accessible, engaging, and grounded in pedagogy.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         {/* CHARTS SECTION */}
-        <div className="py-16 flex flex-col xl:flex-row gap-10 items-center justify-between">
-          <motion.div
-            animate={{ rotate: 360 }}
-            transition={{ duration: 60, repeat: Infinity, ease: 'linear' }}
-            className="select-none inline-block"
+        <div className="py-30">
+          <motion.h3
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ delay: 0.1, type: 'spring', stiffness: 80 }}
+            className="font-medium text-[32px] leading-[120%] text-[#0C0C0C]"
           >
-            <Image
-              src="/images/chart-skils.png"
-              width={500}
-              height={500}
-              alt="chart skills"
-              className="aspect-square"
-            />
-          </motion.div>
+            My Design Process
+          </motion.h3>
+          <div className="mt-16 flex flex-col xl:flex-row gap-10 items-center justify-between">
+            <motion.div
+              initial={{ opacity: 0, x: -50, scale: 0.9 }}
+              whileInView={{ opacity: 1, x: 0, scale: 1, rotate: 360 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{
+                type: 'spring',
+                stiffness: 70,
+                damping: 12,
+                duration: 0.8,
+                rotate: { duration: 60, repeat: Infinity, ease: 'linear' },
+              }}
+              className="select-none inline-block"
+            >
+              <Image
+                src="/images/chart-skils.png"
+                width={500}
+                height={500}
+                alt="chart skills"
+                className="aspect-square"
+              />
+            </motion.div>
 
-          <div className="space-y-8 w-full lg:w-1/2">
-            {stepCharts &&
-              stepCharts.map((chart, idx) => (
-                <StepChartItem key={idx} {...chart} />
-              ))}
+            <div className="space-y-8 w-full lg:w-1/2">
+              {stepCharts &&
+                stepCharts.map((chart, idx) => (
+                  <StepChartItem key={idx} {...chart} />
+                ))}
+            </div>
           </div>
         </div>
 
         {/* GUIDING VALUES */}
-        <div className="py-16">
-          <h2 className="font-bricolage font-medium text-[32px] leading-[120%] text-[#0C0C0C]">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.5 }}
+          className="py-30"
+        >
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ delay: 0.1, type: 'spring', stiffness: 80 }}
+            className="font-bricolage font-medium text-[32px] leading-[120%] text-[#0C0C0C]"
+          >
             Guiding values
-          </h2>
+          </motion.h2>
           <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
             {guidingValues &&
               guidingValues.map((value, idx) => (
                 <GuidingValueCard key={idx} {...value} />
               ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

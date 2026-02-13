@@ -1,4 +1,4 @@
-import { AOSProvider, ScrollLinked } from '@/components/common';
+import { ScrollLinked } from '@/components/common';
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono, Inter } from 'next/font/google';
 import localFont from 'next/font/local';
@@ -120,9 +120,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${bricolage.variable} antialiased`}
       >
-        <AOSProvider>
-          <ScrollLinked>{children}</ScrollLinked>
-        </AOSProvider>
+        <ScrollLinked>{children}</ScrollLinked>
       </body>
     </html>
   );

@@ -2,7 +2,7 @@
 
 import { guidingValues, stepCharts } from '@/constants';
 import { GuidingValue, StepChart } from '@/types';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import Image from 'next/image';
 
 const StepChartItem: React.FC<StepChart> = ({ imageSrc, step, title }) => (

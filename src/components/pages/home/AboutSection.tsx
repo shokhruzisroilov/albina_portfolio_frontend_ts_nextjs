@@ -160,15 +160,16 @@ const AboutSection: React.FC = () => {
                 duration: 0.8,
                 rotate: { duration: 60, repeat: Infinity, ease: 'linear' },
               }}
-              className="select-none inline-block"
+              className="select-none inline-block rounded-full w-40 h-40 sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-96 lg:h-96"
             >
-              <Image
-                src="/images/chart-skils.png"
-                width={500}
-                height={500}
-                alt="chart skills"
-                className="aspect-square"
-              />
+              <div className="w-full h-full rounded-full overflow-hidden">
+                <Image
+                  src="/images/chart-skils.png"
+                  alt="chart skills"
+                  fill
+                  className="object-cover rounded-full"
+                />
+              </div>
             </motion.div>
 
             <div className="space-y-6 sm:space-y-8 w-full lg:w-1/2">

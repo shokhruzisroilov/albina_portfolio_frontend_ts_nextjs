@@ -12,12 +12,14 @@ import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
 import { FreeMode, Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import ProjectModal from './ProjectModal';
 
-// Portfolio Card (o'zgarishsiz qoladi)
-const PortfolioCard: React.FC<{ data: PortfolioItem; index: number }> = ({
-  data,
-  index,
-}) => (
+// Portfolio Card
+const PortfolioCard: React.FC<{
+  data: PortfolioItem;
+  index: number;
+  onViewProject: () => void;
+}> = ({ data, index, onViewProject }) => (
   <motion.div
     initial={{ opacity: 0 }}
     whileInView={{ opacity: 1 }}
@@ -88,12 +90,12 @@ const PortfolioCard: React.FC<{ data: PortfolioItem; index: number }> = ({
         whileInView={{ opacity: 1 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ delay: index * 0.1 + 0.25 }}
-        className="mt-3 sm:mt-4 font-normal text-xs sm:text-[14px] leading-4 sm:leading-5 text-[#818498]"
+        className="mt-3 sm:mt-4 font-normal text-xs sm:text-[14px] leading-4 sm:leading-5 text-[#818498] line-clamp-2"
       >
         {data.description}
       </motion.p>
       <motion.ul className="flex flex-wrap items-center gap-1.5 sm:gap-2 mt-3 sm:mt-4">
-        {data.skills.map((skill, i) => (
+        {data.skills.slice(0, 2).map((skill, i) => (
           <motion.li
             key={i}
             initial={{ opacity: 0, scale: 0.8 }}
@@ -125,6 +127,7 @@ const PortfolioCard: React.FC<{ data: PortfolioItem; index: number }> = ({
       >
         <motion.div
           whileHover={{ scale: 1.05, x: 5 }}
+          onClick={onViewProject}
           className="flex items-center gap-2 sm:gap-3 cursor-pointer group"
         >
           <p className="relative">
@@ -170,10 +173,15 @@ const PortfolioSection: React.FC = () => {
   const swiperRef = useRef<SwiperClass | null>(null);
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
-
   const [selectedFilter, setSelectedFilter] = useState<string>('All');
-  console.log(selectedFilter);
-  const filters = ['All', 'Education', 'Spatial', 'Digital'];
+
+  // Modal state
+  const [selectedProject, setSelectedProject] = useState<PortfolioItem | null>(
+    null
+  );
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const filters = ['All', 'Instructional', 'Spatial', 'Experiential'];
 
   const filteredData = useMemo(() => {
     if (selectedFilter === 'All') {
@@ -200,6 +208,19 @@ const PortfolioSection: React.FC = () => {
   const handleFilterChange = (filter: string) => {
     setSelectedFilter(filter);
     updateSwiper();
+  };
+
+  // Modal functions
+  const openModal = (project: PortfolioItem) => {
+    setSelectedProject(project);
+    setIsModalOpen(true);
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedProject(null);
+    document.body.style.overflow = 'unset';
   };
 
   return (
@@ -283,7 +304,7 @@ const PortfolioSection: React.FC = () => {
           ) : (
             <>
               <Swiper
-                key={`swiper-${selectedFilter}`} // Swiper'ga ham key qo'shamiz
+                key={`swiper-${selectedFilter}`}
                 onSwiper={(swiper) => (swiperRef.current = swiper)}
                 onSlideChange={handleSlideChange}
                 slidesPerView={1}
@@ -304,7 +325,11 @@ const PortfolioSection: React.FC = () => {
               >
                 {filteredData.map((item, i) => (
                   <SwiperSlide key={`slide-${i}-${item.title}`}>
-                    <PortfolioCard data={item} index={i} />
+                    <PortfolioCard
+                      data={item}
+                      index={i}
+                      onViewProject={() => openModal(item)}
+                    />
                   </SwiperSlide>
                 ))}
               </Swiper>
@@ -354,6 +379,15 @@ const PortfolioSection: React.FC = () => {
           )}
         </motion.div>
       </motion.div>
+
+      {/* Modal */}
+      {selectedProject && (
+        <ProjectModal
+          isOpen={isModalOpen}
+          onClose={closeModal}
+          data={selectedProject}
+        />
+      )}
     </div>
   );
 };

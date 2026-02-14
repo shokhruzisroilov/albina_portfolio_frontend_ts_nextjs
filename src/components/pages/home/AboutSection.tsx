@@ -15,7 +15,7 @@ const StepChartItem: React.FC<StepChart> = ({ imageSrc, step, title }) => (
       stiffness: 80,
       damping: 15,
     }}
-    className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6"
+    className="flex items-center gap-4 sm:gap-6"
   >
     <Image
       src={imageSrc}

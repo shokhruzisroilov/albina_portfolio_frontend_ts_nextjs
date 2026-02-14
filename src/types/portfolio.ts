@@ -5,4 +5,11 @@ export interface PortfolioItem {
   description: string;
   skills: string[];
   image: string;
+  problem?: string;
+  approach?: string;
+  solution?: string;
+  outcomes?: string[];
+  link?: string;
+  slug?: string;
+  images?: string[];
 }

@@ -10,8 +10,7 @@ Tailwind CSS
 
 ### repository ni clone qilish
 
-```
-https://github.com/shokhruzisroilov/albina_portfolio_frontend_ts_nextjs.git
+```https://github.com/shokhruzisroilov/albina_portfolio_frontend_ts_nextjs.git
 ```
 
 ### project papkasiga kirish

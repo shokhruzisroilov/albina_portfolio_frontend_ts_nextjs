@@ -102,38 +102,35 @@ const AboutSection: React.FC = () => {
             transition={{ delay: 0.2, duration: 0.5 }}
             className="mt-8 sm:mt-10 md:mt-12 lg:mt-16 font-medium text-sm sm:text-base md:text-lg lg:text-[20px] leading-[140%] tracking-[-0.32px] text-[#5C687D]"
           >
-            I am an instructional designer, educator, and education spacial
-            designer. I am passionate about transforming learning through
-            innovation and evidence-based design. My specialization is
-            development of online and hybrid courses. I create scalable,
-            accessible learning experiences that drive real outcomes, from
-            training 1,800+ teachers across Uzbekistan&apos;s national education
-            system to designing digital courses for Georgetown University&apos;s
-            School of Nursing and School of Continuing Studies.
+            Instructional Designer and Digital Learning Specialist with 5+ years
+            of international experience designing online and hybrid learning,
+            developing digital courses, and integrating educational technologies
+            in higher education and K–12 systems. Skilled in learner-centered
+            design, accessibility standards, assessment alignment, and
+            evidence-based pedagogy. Experienced in creating scalable
+            instructional materials, collaborating with faculty and SMEs, and
+            leveraging AI-enabled tools to enhance engagement and learning
+            outcomes. Strong background in EdTech innovation, professional
+            development, and online learning quality assurance.
             <br />
             <br />
-            My approach integrates Universal Design principles, and learning
-            science to build experiences that are both cutting-edge and
-            inclusive. I work extensively with Canvas LMS, Articulate 360, H5P,
-            and other EdTech platforms to develop interactive content, aligned
-            assessments, and multimedia resources that engage diverse learners.
+            My expertise includes:
+            <br />
+            -EdTech integration aligned with curriculum, pedagogy, and teacher
+            professional development -AI-enabled learning platforms and adaptive
+            tools for skills development -Project preparation, grant proposal
+            development, and M&E for donor-financed initiatives -Cross-sector
+            collaboration with ministries, universities, NGOs, and international
+            organizations
             <br />
             <br />
-            What sets me apart is my ability to scale instructional innovation
-            internationally. I have designed blended learning programs, digital
-            pedagogy training, and cascade professional development models that
-            reached thousands of educators in Uzbekistan. I co-authored a
-            national EdTech manual with the U.S. Embassy and led quality
-            assurance initiatives ensuring accessibility standards across all
-            deliverables. Currently pursuing my Master&apos;s in Learning,
-            Design and Technology at Georgetown University, I am researching
-            conversational AI applications in education—work I presented at
-            EduLearn 2025 in Spain. I am interested in advancing the field,
-            always exploring emerging technologies that can democratize quality
-            education globally. Whether collaborating with faculty, designing
-            assessments, or implementing new learning technologies, my focus
-            remains constant: creating learner-centered experiences that are
-            accessible, engaging, and grounded in pedagogy.
+            Currently, I am a Graduate Associate at Georgetown University’s
+            Center for New Designs in Learning & Scholarship and pursuing a
+            Master’s in Learning, Design & Technology. My research focuses on
+            AI-enabled tools for student engagement and inquiry-based learning.
+            I am driven to advance technology-enabled, inclusive education in
+            LMIC contexts, and to support systems that prepare learners for the
+            future of work.
           </motion.p>
         </motion.div>
 

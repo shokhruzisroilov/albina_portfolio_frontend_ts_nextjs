@@ -229,12 +229,13 @@ const Header = () => {
       <div className="flex justify-center pt-16 sm:pt-20 md:pt-24 lg:pt-28 xl:pt-32 px-4 sm:px-6">
         <div className="relative w-full max-w-7xl aspect-video rounded-xl sm:rounded-2xl md:rounded-3xl lg:rounded-4xl bg-linear-to-tr from-[#F99D1C1A] via-[#FAA61A1A] to-[#FFC9071A]">
           <div className="absolute w-full h-full left-0 bottom-0 rounded-xl sm:rounded-2xl md:rounded-3xl lg:rounded-4xl p-1 sm:p-1.5 md:p-2 lg:p-2.5 xl:p-3 bg-linear-to-tr from-[#F99D1C] via-[#FAA61A] to-[#FFC907]">
-            <Image
-              src="/images/video.png"
-              width={1036}
-              height={600}
-              alt="Hero Video"
-              priority
+            <iframe
+              src="https://www.youtube.com/embed/QWbc7HTnYiA"
+              title="Conversational AI research pathfinder story"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
               className="w-full h-full rounded-xl sm:rounded-2xl md:rounded-3xl lg:rounded-4xl object-cover"
             />
           </div>
